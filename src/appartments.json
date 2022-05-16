@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Studio in historical center",
+    "imageUrl": "https://a0.muscache.com/im/pictures/ac9e3d82-e064-4111-bd88-e9abb697ef1f.jpg",
+    "price": 59,
+    "rating": 3,
+    "isAvailable": true,
+    "key": 1
+  },
+  {
+    "title": "Cozy apartment",
+    "rating": 5,
+    "price": 30,
+    "isAvailable": false,
+    "imageUrl": "https://a0.muscache.com/im/pictures/19755676/c2d3162d_original.jpg?aki_policy=large",
+    "key": 2
+  },
+  {
+    "title": "Tiny studio",
+    "rating": 4,
+    "price": 20,
+    "isAvailable": false,
+    "imageUrl": "https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large",
+    "key": 3
+  },
+  {
+    "title": "2-story apartment",
+    "rating": 5,
+    "price": 90,
+    "isAvailable": true,
+    "imageUrl": "https://a0.muscache.com/im/pictures/16186201/7575dc92_original.jpg?aki_policy=large",
+    "key": 4
+  }
+]
