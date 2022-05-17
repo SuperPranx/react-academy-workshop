@@ -2,17 +2,20 @@ import React from 'react';
 import Counters from './Counters';
 import {useMeasureWindow} from './hooks/measureWindow';
 import LoginForm from './LoginForm';
+import {UserContext} from './contexts/user-context';
+import Header from './header';
+import Footer from './footer';
 
 const App = () => {
 
-  const {width, height} = useMeasureWindow();
+  const user = {name: "Alisaie", surname: "Leveileur"};
 
   return <>
-    <div><b>Counters</b></div>
-    <Counters />
-    <div>Width is: {width}<br />Height is: {height}</div>
-    <br/>
-    <LoginForm />
+    <h2>Context example</h2>
+    <UserContext.Provider value={user}>
+      <Header />
+      <Footer />
+    </UserContext.Provider>
   </>
 };
 
