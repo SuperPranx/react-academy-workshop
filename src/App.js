@@ -3,26 +3,37 @@ import Apartment from './Apartment';
 import ApartmentList from './ApartmentList';
 
 import apartments from './apartments.json';
-import Counters from './Counters';
-import { useToggle } from './hooks';
-import LoginForm from './LoginForm';
+import {useInput, useNumber, useToggle} from './hooks';
+import SearchBar from './SearchBar';
 
 const App = () => {
-  const counterToggle = useToggle();
+  const showAllApartments = useToggle(false);
+  const [searchValue, setSearchValue] = useState('');
+
+  const bySearchValue = (apartment) => {
+    return apartment.title.toLowerCase().includes(searchValue.toLowerCase());
+  }
+
+  const byAvailability = (apartment) => {
+    return apartment.isAvailable;
+  }
+
+  const filteredApartments = showAllApartments.value ?
+      apartments.filter(bySearchValue) : apartments.filter(bySearchValue).filter(byAvailability);
+
+  const numApartments = filteredApartments.length;
 
   return <>
-    <LoginForm />
-    <br />
-    <br />
-    <br />
-    <div><b>Counters list</b></div>
-    <button onClick={counterToggle.toggle}>{counterToggle.value ? 'Hide' : 'Show'} counters</button>
-    {counterToggle.value ? <Counters /> : null}
-    <br />
-    <br />
-    <br />
     <div><b>Apartment list</b></div>
-    <ApartmentList apartments={apartments} />
+    <div>
+      <button onClick={showAllApartments.toggle}>Show {showAllApartments.value ? 'only available' : 'all'}</button>
+      <br />
+      <SearchBar value={searchValue} setValue={setSearchValue} />
+      <br />
+      {numApartments ? `Found ${numApartments} of ${apartments.length}` : 'No apartments found'}
+    </div>
+    <ApartmentList
+      apartments={filteredApartments} />
   </>
 };
 
