@@ -1,10 +1,10 @@
 import React from 'react';
 import Apartment from './Apartment';
 
-const ApartmentList = ({appartments}) => {
+const ApartmentList = ({apartments}) => {
   return <>
-    {appartments.map(
-      appartment => <Apartment key={appartment.key} {...appartment} />
+    {apartments.map(
+      apartment => <Apartment key={apartment.key} {...apartment} />
     )}
   </>
 };

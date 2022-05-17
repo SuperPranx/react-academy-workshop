@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Apartment from './Apartment';
 import ApartmentList from './ApartmentList';
 
-import appartments from './appartments.json';
+import apartments from './apartments.json';
 import Counters from './Counters';
 import { useToggle } from './hooks';
 import LoginForm from './LoginForm';
@@ -22,7 +22,7 @@ const App = () => {
     <br />
     <br />
     <div><b>Apartment list</b></div>
-    <ApartmentList appartments={appartments} />
+    <ApartmentList apartments={apartments} />
   </>
 };
 
