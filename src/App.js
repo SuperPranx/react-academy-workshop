@@ -1,21 +1,19 @@
 import React from 'react';
-import Counters from './Counters';
-import {useMeasureWindow} from './hooks/measureWindow';
-import LoginForm from './LoginForm';
-import {UserContext} from './contexts/user-context';
 import Header from './header';
 import Footer from './footer';
+import UserManager from './contexts/user-manager';
+import UserForm from './UserForm';
+import {UserContext} from './contexts/user-context';
 
 const App = () => {
 
-  const user = {name: "Alisaie", surname: "Leveileur"};
-
   return <>
     <h2>Context example</h2>
-    <UserContext.Provider value={user}>
+    <UserManager>
       <Header />
-      <Footer />
-    </UserContext.Provider>
+      <UserForm />
+      {/*<Footer />*/}
+    </UserManager>
   </>
 };
 

@@ -24,8 +24,8 @@ export const useNumber = (initialValue = 0) => {
   return {value, increase, decrease};
 }
 
-export const useInput = (initialValue, persistKey = null) => {
-  const [value, setValue] = useState(persistKey ? persistKey : initialValue);
+export const useInput = (initialValue = '', persistKey = null) => {
+  const [value, setValue] = useState(persistKey ? window.localStorage.getItem(persistKey) ? window.localStorage.getItem(persistKey): '' : initialValue);
 
   useEffect(() => {
     if (persistKey) {
