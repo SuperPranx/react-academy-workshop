@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 
 export const useToggle = (initialValue = false) => {
   const [value, setValue] = useState(initialValue);
@@ -24,8 +24,14 @@ export const useNumber = (initialValue = 0) => {
   return {value, increase, decrease};
 }
 
-export const useInput = initialValue => {
-  const [value, setValue] = useState(initialValue);
+export const useInput = (initialValue, persistKey = null) => {
+  const [value, setValue] = useState(persistKey ? persistKey : initialValue);
+
+  useEffect(() => {
+    if (persistKey) {
+      window.localStorage.setItem(persistKey, value);
+    }
+  });
 
   const onChange = event => {
     setValue(event.target.value);

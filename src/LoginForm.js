@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useInput, useNumber } from './hooks/hooks';
 
 const LoginForm = () => {
-  const username = useInput('');
-  const password = useInput('');
+  const username = useInput('', 'username');
+  const password = useInput('', 'password');
 
   const clearAll = () => {
     username.clear();
