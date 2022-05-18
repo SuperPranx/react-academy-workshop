@@ -1,16 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
-import UserManager from './contexts/user-manager';
-import UserForm from './components/UserForm';
+import Select from './components/Select';
+import Option from './components/Option';
 
 const App = () => {
 
   return <>
-    <h2>Context example</h2>
-    <UserManager>
-      <Header />
-      <UserForm />
-    </UserManager>
+    <h3>Select and option</h3>
+    <Select>
+      <Option value="fruit01">Apple</Option>
+      <Option value="fruit02">Cherry</Option>
+      <Option value="fruit03">Tomato</Option>
+    </Select>
   </>
 };
 
