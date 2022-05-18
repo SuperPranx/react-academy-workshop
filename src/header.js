@@ -3,6 +3,6 @@ import {UserContext} from './contexts/user-context';
 
 const Header = () => {
   const { user } = useContext(UserContext);
-  return <h3>The name is: { user.name }</h3>
+  return user.name && user.surname ? <h3>The name is: {user.name} {user.surname}</h3> : 'No user :(';
 }
 export default Header;

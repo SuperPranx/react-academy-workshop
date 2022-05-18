@@ -5,8 +5,8 @@ import {UserContext} from './contexts/user-context';
 const UserForm = () => {
   const {setUser} = useContext(UserContext);
 
-  const name = useInput('', 'name');
-  const surname = useInput('', 'surname');
+  const name = useInput('');
+  const surname = useInput('');
 
   const clearAll = () => {
     name.clear();
