@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import { useInput } from './hooks/hooks';
-import {UserContext} from './contexts/user-context';
+import { useInput } from '../hooks/hooks';
+import {UserContext} from '../contexts/user-context';
 
 const UserForm = () => {
   const {setUser} = useContext(UserContext);

@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {UserContext} from './contexts/user-context';
+import {UserContext} from '../contexts/user-context';
 
 const Footer = () => {
   const {user} = useContext(UserContext);

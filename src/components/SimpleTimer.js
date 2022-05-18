@@ -1,4 +1,4 @@
-import {useNumber} from './hooks/hooks';
+import {useNumber} from '../hooks/hooks';
 import {useEffect} from 'react';
 
 const SimpleTimer = () => {

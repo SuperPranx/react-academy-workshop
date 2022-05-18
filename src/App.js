@@ -1,9 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './components/Header';
 import UserManager from './contexts/user-manager';
-import UserForm from './UserForm';
-import {UserContext} from './contexts/user-context';
+import UserForm from './components/UserForm';
 
 const App = () => {
 
@@ -12,7 +10,6 @@ const App = () => {
     <UserManager>
       <Header />
       <UserForm />
-      {/*<Footer />*/}
     </UserManager>
   </>
 };

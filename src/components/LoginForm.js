@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useInput, useNumber } from './hooks/hooks';
+import React from 'react';
+import { useInput } from '../hooks/hooks';
 
 const LoginForm = () => {
   const username = useInput('', 'username');

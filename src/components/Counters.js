@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import { useNumber } from './hooks/hooks';
-import {useDocumentTitle} from './hooks/counterHooks';
+import React from 'react';
+import { useNumber } from '../hooks/hooks';
+import {useDocumentTitle} from '../hooks/counterHooks';
 
 const Counters = () => {
   const counter = useNumber();
