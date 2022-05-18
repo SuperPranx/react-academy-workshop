@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import ApartmentList from './ApartmentList';
 
 import apartments from './apartments.json';
+import SimpleTimer from './SimpleTimer';
 
 const App = () => {
   const showAllApartments = useToggle(false);
@@ -28,6 +29,8 @@ const App = () => {
   const numApartments = filteredApartments.length;
 
   return <>
+    <SimpleTimer />
+    <br />
     <div><b>Apartment list</b></div>
     <div>
       <button onClick={showAllApartments.toggle}>Show {showAllApartments.value ? 'only available' : 'all'}</button>
