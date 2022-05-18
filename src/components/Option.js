@@ -1,9 +1,16 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {SelectContext} from './Select';
 
 const Option = ({children, value}) => {
-  const {selectedOption, updateSelection} = useContext(SelectContext);
+  const {selectedOption, updateSelection, registerOption, unregisterOption} = useContext(SelectContext);
   const isActive = selectedOption && selectedOption.value === value;
+
+  useEffect(() => {
+    registerOption({value, children});
+    return () => {
+      unregisterOption({value, children});
+    }
+  }, []);
 
   return (
     <div className="option"

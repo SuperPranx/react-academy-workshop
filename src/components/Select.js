@@ -5,10 +5,27 @@ export const SelectContext = React.createContext({});
 const Select = ({children}) => {
   const [selectedOption, setSelectedOption] = useState();
   const [opened, setOpened] = useState(false);
+  const [availableOptions, setAvailableOptions] = useState([]);
 
   const updateSelection = (option) => {
     setSelectedOption(option);
     setOpened(false);
+  }
+
+  const registerOption = (newItem) => {
+    setAvailableOptions(prevState => {
+      console.log('Registering: ' + newItem.value);
+      return [...prevState, newItem];
+    });
+  }
+
+  const unregisterOption = (item) => {
+    setAvailableOptions(prevState => {
+      if (prevState.find(current => current.value == item.value)) {
+        console.log('Unregistering: ' + item.value);
+        return prevState.filter(option => option.value !== item.value);
+      }
+    });
   }
 
   const open = () => {
@@ -17,8 +34,8 @@ const Select = ({children}) => {
 
   if (opened) {
     return (
-      <SelectContext.Provider value={{selectedOption, updateSelection}}>
-        <div style={{padding: '5px', border: '1px solid red'}}>
+      <SelectContext.Provider value={{selectedOption, updateSelection, registerOption, unregisterOption}}>
+        <div style={{padding: '5px', border: '1px solid red'} }>
           {children}
         </div>
       </SelectContext.Provider>
@@ -26,7 +43,7 @@ const Select = ({children}) => {
   } else {
     return (
       <div className="select" style={{padding: '5px', border: '1px solid cyan'}} onClick={open}>
-        {selectedOption? selectedOption.children : 'Pick One'}
+        {selectedOption ? selectedOption.children : 'Pick One'}
       </div>
     );
   }
