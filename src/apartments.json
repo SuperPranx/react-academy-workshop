@@ -5,7 +5,7 @@
     "price": 59,
     "rating": 3,
     "isAvailable": true,
-    "key": 1
+    "id": 0
   },
   {
     "title": "Cozy apartment",
@@ -13,7 +13,7 @@
     "price": 30,
     "isAvailable": false,
     "imageUrl": "https://a0.muscache.com/im/pictures/19755676/c2d3162d_original.jpg?aki_policy=large",
-    "key": 2
+    "id": 1
   },
   {
     "title": "Tiny studio",
@@ -21,7 +21,7 @@
     "price": 20,
     "isAvailable": false,
     "imageUrl": "https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large",
-    "key": 3
+    "id": 2
   },
   {
     "title": "2-story apartment",
@@ -29,6 +29,6 @@
     "price": 90,
     "isAvailable": true,
     "imageUrl": "https://a0.muscache.com/im/pictures/16186201/7575dc92_original.jpg?aki_policy=large",
-    "key": 4
+    "id": 3
   }
 ]

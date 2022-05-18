@@ -1,11 +1,14 @@
 import React from 'react';
 import Apartment from './Apartment';
 
-const ApartmentList = ({apartments}) => {
+const ApartmentList = ({apartments, favorites, toggleFavorite}) => {
   return <>
     {
       apartments.map(
-        apartment => <Apartment key={apartment.key} {...apartment} />
+        apartment =>
+          <Apartment toggleFavorite={toggleFavorite}
+                     isFavorite={favorites.includes(apartment.id)}
+                     key={apartment.id} {...apartment} />
     )}
   </>
 };
